@@ -11,17 +11,16 @@ jobs:
 
     steps:
     - name: Step one
-      run: echo "Log from step one"
+      run: echo "Log from Job 1, step one"
     - name: Step two
-      run: echo "Log from step two"
+      run: echo "Log from Job 2, step two"
       
   job2:
     needs: job1
     runs-on: ubuntu-latest
 
     steps:
-    - name: Cowsays
-      uses: mscoutermarsh/cowsays-action@master
-      with:
-        text: 'Ready for prod--ship it!'
-        color: 'magenta'
+    name: Step one
+      run: echo "Log from job 2, step one"
+    - name: Step two
+      run: echo "Log from job 2, step two"
